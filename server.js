@@ -3,8 +3,7 @@ const path = require('path');
 
 const app = express();
 
-console.log(__dirname);
-
+// API DATA
 const people = [
   {
     id: 1,
@@ -19,10 +18,13 @@ const people = [
 ];
 
 
+
+app.use(express.static('./public'));
+
 // ROOT/HOME FILE
-app.get('/', (clientRequestObject, serverResponseObject) => {
-  serverResponseObject.sendFile(path.join(__dirname, 'index.html'));
-});
+// app.get('/', (clientRequestObject, serverResponseObject) => {
+//   serverResponseObject.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 // API DATA
 app.get('/api/people', (clientRequestObject, serverResponseObject) => {
@@ -38,13 +40,15 @@ app.get('/api/people', (clientRequestObject, serverResponseObject) => {
 });
 
 // PARAM PLACEHOLDER
-app.get('/api/person/:id', (clientRequestObject, serverResponseObject) => {
-  const userObj = people.find(personObj => personObj.id == clientRequestObject.params.id);
 
-  serverResponseObject.send(userObj ? userObj : {
-    message: 'User not found',
-    error: 404
-  });
+app.get('/test/:something/val', (clientRequestObject, serverResponseObject) => {
+    serverResponseObject.send('You did it!')
+});
+
+app.get('/api/test', (clientRequestObject, serverResponseObject) => {
+    serverResponseObject.send({
+        message: 'This is a test object'
+    })
 });
 
 // START SERVER
