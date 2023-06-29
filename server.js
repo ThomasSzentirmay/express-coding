@@ -21,6 +21,10 @@ const people = [
 
 app.use(express.static('./public'));
 
+app.get('/about', (clientRequestObject, serverResponseObject) => {
+    serverResponseObject.sendFile(path.join(__dirname, 'public/about.html'));
+});
+
 // ROOT/HOME FILE
 // app.get('/', (clientRequestObject, serverResponseObject) => {
 //   serverResponseObject.sendFile(path.join(__dirname, 'index.html'));
