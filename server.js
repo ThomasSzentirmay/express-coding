@@ -1,5 +1,6 @@
 const express = require('express');
-const path = require('path');
+const Note = require('./models/note');
+// const path = require('path');
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Post route to retrieve the form data
 app.post('/notes', (clientReq, serverRes) => {
-  console.log(clientReq.body);
+  const newNote = new Note(clientReq.body.note)
 });
 
 
