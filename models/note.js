@@ -27,4 +27,4 @@ class Note {
     }
 }
 
-module.exports = Note;
+module.exports = { Note: Note, getNotes: getNotes };
