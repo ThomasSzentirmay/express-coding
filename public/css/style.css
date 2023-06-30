@@ -1,3 +1,9 @@
-body {
-    background-color: #ff0000;
+form {
+    width: 300px;
+    margin: 35px auto 0;
+}
+
+.flex-column button {
+    cursor: pointer;
+    margin-top: 10px;
 }

@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>HomePage</title>
 </head>
 <body>
 
-    <nav>
-        <a href="/about">About</a>
-    </nav>
+    <h1 class="text-center">Note-Taker</h1>
+
+    <form action="/notes" method="POST" class="flex-column">
+        <input class="p-2" name="note" type="text" placeholder="Enter your note">
+        <button class="btn btn-dark mt-3">Save Note</button>
+    </form>
+
+    <main id="note-output" class="flex-column p-5">
+        <p>No notes have been added</p>
+        <!-- <div class="note">
+            <h4>My note text</h4>
+            <p>Added On: 6/30/2023</p>
+        </div>
+
+        <div class="note">
+            <h4>My note text</h4>
+            <p>Added On: 6/30/2023</p>
+        </div>
+
+        <div class="note">
+            <h4>My note text</h4>
+            <p>Added On: 6/30/2023</p>
+        </div> -->
+    </main>
     
-    <h1>HomePage</h1>
-
-    <!-- SHOW THIS API DATA IN CONSOLE -->
-    <!-- <script>
-        fetch('/api/people')
-        .then(res => res.json())
-        .then(data => console.log(data))
-    </script> -->
-
     <script src="/js/browser.js"></script>
 </body>
 </html>
