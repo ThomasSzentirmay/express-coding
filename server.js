@@ -1,5 +1,5 @@
 const express = require('express');
-const Note = require('./models/note');
+const Note = require('./models/Note');
 // const path = require('path');
 
 const app = express();
